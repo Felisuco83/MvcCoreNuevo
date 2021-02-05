@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "CochesAsincronos";
+}
+
+@section scripts {
+<script>
+    $(document).ready(function () {
+        $("#botoncoches").click(function () {
+            $("#capacoches").load("/Coches/GetCochesPartial");
+        });
+        $("#botonbuscar").click(function () {
+            var id = $("#cajaid").val();
+            $("#capacar").load("/Coches/GetDetallesCochePartial/"+ id);
+        });
+    });
+</script>
+}
+
+<h1>Coches Asincronos</h1>
+
+<label>Id Coche</label>
+<input type="text" id="cajaid" class="form-control" />
+<button type="button" id="botonbuscar" class="btn btn-success">Buscar coche</button>
+
+<button type="button" id="botoncoches">
+    Mostrar coches
+</button>
+
+<div id="capacoches" style="background-color:yellow">
+
+</div>
+
+<div id="capacar" style="background-color:aqua">
+
+</div>
