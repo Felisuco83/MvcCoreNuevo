@@ -1,0 +1,52 @@
+﻿@model MvcCoreNuevo.Models.VistaDept
+
+@{
+    ViewData["Title"] = "PaginarVistaDeptRegistro";
+}
+
+<h1>PaginarVistaDeptRegistro</h1>
+<h2 style="color:red;">Registro @ViewBag.Posicion de @ViewBag.Ultimo</h2>
+<div>
+    <ul class="list-group-horizontal">
+        <li class="list-group-item">
+            <a asp-action="PaginarVistaDeptRegistro" asp-route-posicion="1">Primero</a>
+        </li>
+        <li class="list-group-item">
+            <a asp-action="PaginarVistaDeptRegistro" asp-route-posicion="@ViewBag.Anterior">Anterior</a>
+        </li>
+        <li class="list-group-item">
+            <a asp-action="PaginarVistaDeptRegistro" asp-route-posicion="@ViewBag.Siguiente">Siguiente</a>
+        </li>
+        <li class="list-group-item">
+            <a asp-action="PaginarVistaDeptRegistro" asp-route-posicion="@ViewBag.Ultimo">Ultimo</a>
+        </li>
+    </ul>
+</div>
+<div>
+    <h4>VistaDept</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Posicion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Posicion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Localidad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Localidad)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
