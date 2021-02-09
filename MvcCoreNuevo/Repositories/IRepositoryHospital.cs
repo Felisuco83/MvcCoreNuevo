@@ -13,5 +13,8 @@ namespace MvcCoreNuevo.Data
         VistaDept GetRegistroDepartamento(int posicion);
         int GetNumRegVistaDepartamentos();
         List<VistaDept> GetGrupoDepartamentos(int posicion);
+        Departamento GetDepartamentoPosicion(int posicion, ref int salida);
+        List<Departamento> GetGrupoDepartamentosSQL(int posicion, ref int numeroregistros);
+        List<Empleado> GetGrupoEmpleadosSQL(int posicion, int regpag, ref int numeroregistros);
     }
 }
